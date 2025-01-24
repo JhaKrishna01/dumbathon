@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Tech DumbDark Store</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .welcome-header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(45deg, #000000, #2c2a2a);
+            color: white;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .rotating-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: rotateAndScale 8s infinite;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            animation-play-state: paused;
+        }
+
+        .funny-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .funny-caption {
+            transform: translateY(0);
+        }
+
+        @keyframes rotateAndScale {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(90deg) scale(0.8); }
+            50% { transform: rotate(180deg) scale(1); }
+            75% { transform: rotate(270deg) scale(0.8); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        .enter-store {
+            margin: 2rem;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background-color: #d734cc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .enter-store:hover {
+            background-color: #480a3f;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-header">
+        <h1>🚀 Welcome to Tech DumbDark Store</h1>
+        <p>Where Tech Meets Humor!</p>
+    </div>
+
+    <div class="rotating-gallery">
+        <div class="gallery-item">
+            <img src="images/firecracker.jpg" alt="FireCracking Milk">
+            <div class="funny-caption">Milk that goes BOOM! 💥</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/antman.jpg" alt="Ant-Man's Secret">
+            <div class="funny-caption">Size doesn't matter in coding! 🐜</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/software.png" alt="Software Engineer">
+            <div class="funny-caption">Debug in style! 😎</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/wifi.gif" alt="WiFi Credentials">
+            <div class="funny-caption">Internet everywhere! 📶</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/dosa.jpg" alt="Dosa">
+            <div class="funny-caption">Code fuel! 🍽️</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/compilersuji.png" alt="Center a Div">
+            <div class="funny-caption">The eternal CSS struggle! 🎯</div>
+        </div>
+    </div>
+
+    <a href="index.html" class="enter-store">Enter the Store 🎮</a>
+</body>
+</html>
+<style>
+    .features-section {
+        padding: 40px 20px;
+        background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+        color: #fff;
+        margin: 30px 0;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .feature-card {
+        background: rgba(255,255,255,0.1);
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.3s;
+        backdrop-filter: blur(5px);
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .feature-icon {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }
+
+    .feature-title {
+        font-size: 1.2em;
+        color: #ff7f50;
+        margin-bottom: 10px;
+    }
+
+    .feature-description {
+        color: #e0e0e0;
+        line-height: 1.6;
+    }
+
+    .testimonials {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .testimonial-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px auto;
+        max-width: 600px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-text {
+        font-style: italic;
+        color: #555;
+        margin: 15px 0;
+    }
+
+    .testimonial-author {
+        color: #d734cc;
+        font-weight: bold;
+    }
+
+    .newsletter-section {
+        background: linear-gradient(45deg, #c92eb5, #b41d03);
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        margin: 30px auto;
+        max-width: 800px;
+    }
+
+    .newsletter-section h2 {
+        color: white;
+        margin-bottom: 15px;
+    }
+
+    .newsletter-form {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .newsletter-input {
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        width: 300px;
+        font-size: 16px;
+    }
+
+    .subscribe-btn {
+        padding: 12px 25px;
+        background: #1d3557;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .subscribe-btn:hover {
+        background: #457b9d;
+    }
+</style>
+
+<div class="features-section">
+    <h2 style="text-align: center; margin-bottom: 30px;">Why Choose Tech DumbDark? 🤔</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3 class="feature-title">Unique Products</h3>
+            <p class="feature-description">From FireCracking Milk to Ant-Man's Secret Pill, find products you won't see anywhere else!</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎮</div>
+            <h3 class="feature-title">Tech & Fun Combined</h3>
+            <p class="feature-description">Where serious tech meets hilarious descriptions. Learning was never this fun!</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎵</div>
+            <h3 class="feature-title">Musical Shopping</h3>
+            <p class="feature-description">Shop with our curated background music to enhance your experience!</p>
+        </div>
+    </div>
+</div>
+
+<div class="testimonials">
+    <h2>What Our Customers Say 💬</h2>
+    <div class="testimonial-card">
+        <p class="testimonial-text">"The FireCracking Milk changed my life! Now my coffee breaks are explosive! 💥"</p>
+        <p class="testimonial-author">- HomeLander</p>
+    </div>
+    <div class="testimonial-card">
+        <p class="testimonial-text">"Finally found a place that understands programmer humor. Take my money! 💸"</p>
+        <p class="testimonial-author">- CompilerSuji</p>
+    </div>
+</div>
+
+<div class="newsletter-section">
+    <h2>Stay Updated With My Experiments 🎉</h2>
+    <p style="color: white;">Follow Me On InstaGram , me <button style="color: #c92eb5;"><a href="http://instagram.com/compilersuji">Suji</a></button>!</p>
+    <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" class="newsletter-input">
+        <button type="submit" class="subscribe-btn">Connect me!</button>
+    </form>
+</div>

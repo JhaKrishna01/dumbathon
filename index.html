@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tech Gadget Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+        <h1>🚀 Tech DumbDark Store</h1>
+        <div class="cart-info">
+          <span>Cart: {{ cart.length }} items</span>
+          <span>Total: ${{ calculateTotal }}</span>
+        </div>
+        <button class="music-control" @click="toggleMusic">
+          🎵 {{ isPlaying ? 'Pause Music' : 'Play Music' }}
+        </button>
+      </header>
+      
+
+    <main>
+      <div class="category-tabs">
+        <button @click="currentCategory = 'tech'" :class="{ active: currentCategory === 'tech' }">Tech Products</button>
+        <button @click="currentCategory = 'books'" :class="{ active: currentCategory === 'books' }">Books</button>
+      </div>
+
+      <div v-if="currentCategory === 'tech'">
+        <h2>Tech Products</h2>
+        <section class="products">
+          <div v-for="product in techProducts" :key="product.id" class="product-card">
+            <img :src="product.image" :alt="product.name">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <div class="product-footer">
+              <span class="price">Rs.{{ product.price }}</span>
+              <button @click="addToCart(product)">Add to Cart</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div v-if="currentCategory === 'books'">
+        <h2>Books</h2>
+        <section class="products">
+          <div v-for="book in books" :key="book.id" class="product-card">
+            <img :src="book.image" :alt="book.name">
+            <h3>{{ book.name }}</h3>
+            <p>{{ book.description }}</p>
+            <div class="product-footer">
+              <span class="price">Rs.{{ book.price }}</span>
+              <button @click="addToCart(book)">Add to Cart</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="cart">
+        <h2>Shopping Cart</h2>
+        <div v-for="(item, index) in cart" :key="index" class="cart-item">
+          <div class="cart-item-details">
+            <h3>{{ item.name }}</h3>
+            <div class="product-reviews" v-if="item.reviews && item.reviews.length">
+              <div class="average-rating">
+                Average Rating: {{ getAverageRating(item.reviews) }} ★
+              </div>
+              <div class="review-list">
+                <div v-for="(review, idx) in item.reviews" :key="idx" class="review-item">
+                  <div class="stars">
+                    <span v-for="n in 5" :key="n" 
+                        :class="{ 'star-filled': n <= review.rating }">★</span>
+                  </div>
+                  <div class="review-content">
+                    <p class="review-comment">"{{ review.comment }}"</p>
+                    <p class="review-user">- {{ review.user }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div v-else class="no-reviews">No reviews yet</div>
+            <div class="item-price">
+              <span>Rs.{{ item.price }}</span>
+              <button @click="removeFromCart(index)">Remove</button>
+            </div>
+          </div>
+        </div>
+        <button v-if="cart.length" @click="checkout" class="checkout-btn">Checkout</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
