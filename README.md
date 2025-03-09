@@ -1,5 +1,8 @@
 ﻿# hackathon-second-rank
 
+## my challenge was to create a shoping cart with dum stuffs,without any popups & every picture you'll use in this web should be rotate.
+
+
 ## components and tools:     
 <img src="https://skillicons.dev/icons?i=html,css" height="50"/>
 
